@@ -1,0 +1,16 @@
+.Header--01 {
+	@include fixed(0, 0, null, 0);
+}
+
+.Header__content {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 15px;
+}
+
+
+.button--01,
+.logo {
+	color: #fff;
+	font-size: 30px;
+}
