@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Header from './components/header';
-import PlayView from './components/playview';
 import Background from './components/background';
+import PlayView from './containers/containerPlayView';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 import './App.css';
 
 class App extends Component {
@@ -10,7 +12,10 @@ class App extends Component {
       <div className="Dashboard-01">
         <Background />
           <Header/>
-          <PlayView />
+          
+          <Provider store={store}>
+          	<PlayView />
+          </Provider>
       </div>
     );
   }
