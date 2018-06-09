@@ -1,11 +1,9 @@
-.play-view__control {
-	padding: 0 0 30px 0;
-}
-
 .play-view__image-wrapper {
 	position: relative;
 	text-align: center;
-	padding: 15%;
+	margin-top: 90px;
+	margin-bottom: 30px;
+	padding: 0 15%;
 
 	.play-view__image {
 		width: 70%;
@@ -84,6 +82,8 @@
 
 .control-main-wrapper {
 	position: relative;
+	padding: 15px 0 15px;
+	background-color: #333;
 
 	.loop-button {
 		@include absolute(50%, null, null, 15px);
@@ -95,8 +95,6 @@
 		}
 	}
 }
-
-
 
 .play-view__control {
 	@include absolute(null, 0, 0, 0);
@@ -121,6 +119,17 @@
 			display: inline-block;
 			margin: 0 12px;
 			vertical-align: middle;
+			
+			img {
+				cursor: pointer;
+			}
 		}
 	}
+}
+
+#progress-bar-01 {
+	width: 100%;
+	display: block;
+	margin-bottom: -2px;
+	cursor: pointer;
 }

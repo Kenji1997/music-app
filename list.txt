@@ -1,0 +1,27 @@
+---kịch bản play 1 track mới
+
+*search -> list item -> click item
+
+* khởi tạo lại state (bằng initState({initStatus : true}) // reducer return ra merge { ...defaultState, {initStatus : true} }
+- nếu có track đang play thì pause sound
+- load sound từ sdk
+- bắt sự kiện onPlay onPause (là các event để đổi state)
+- pass state chính (bao gồm các info of track, pass các status Search, status Loading để hộ trợ hiệu ứng)
+
+* kịch bản sử dụng initStatus của search-input là 
+	+ set initStatus : true
+	+ nếu tồn tại initStatus của searchReducer và khác với initStatus của PlayviewReducer thì gán initStatus của PlayviewReducer = initStatus của searchReducer;
+	+ nếu initStatus của PlayviewReducer === true thì
+set initStatus của searchReducer = false;
+
+=> mỗi lần khở tạo 1 track mới thì sẽ chạy theo chu trình như trên
+- khởi tạo searchReducer mới
+- khởi tạo PlayViewReducer mới
+
+
+--- kịch bản play 1 track
++ bắt đầu play thì button phải hiện hình pause
++ button hiện hình play khi đang pause
++ progress bar không chạy khi đang pause
++ seek canvas -> seek sound
+

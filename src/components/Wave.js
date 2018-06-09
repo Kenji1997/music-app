@@ -15,9 +15,9 @@ class Wave {
 		this.lamda = 650;
 		this.l = 500;
 
-		if (type == "1") {
+		if (type === "1") {
 			this.WaveFunc = (A, x, t)=> 2*A*Math.sin(2*Math.PI*x/this.lamda)*Math.cos(2*Math.PI*t + Math.sin(x/29 + this.lamda/A) + 2*Math.PI*(A/this.lamda));
-		} else if(type == "2") {
+		} else if(type === "2") {
 			this.WaveFunc = (A, x, t)=> 2*A*Math.cos(2*Math.PI*x/this.lamda)*Math.cos(2*Math.PI*t + Math.sin(x/45 + this.lamda) + Math.PI/4);
 		} else this.WaveFunc = (A, x, t)=> 2*A*Math.cos(2*Math.PI*x/this.lamda)*Math.cos(2*Math.PI*t + Math.sin(x/A + t - this.l*this.lamda/A) + 2*Math.PI/3);
 	};

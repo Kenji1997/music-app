@@ -1,16 +1,110 @@
 .Header--01 {
 	@include fixed(0, 0, null, 0);
+	z-index: 100;
 }
 
 .Header__content {
 	display: flex;
 	justify-content: space-between;
-	padding: 10px 15px;
+	padding: 15px;
 }
 
+.search-wrapper {
+	width: 100%;
+}
 
-.button--01,
-.logo {
+.search-form-wrapper {
+	width: 100%;
+}
+
+.search-form-01 {
+	display: block;
+	border: 2px solid #fff;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.button-search-01 {
+	padding: 10px;
+	border: none;
+	font-size: 18px;
+	background-color: transparent;
+
+	* {
+		color: #fff;
+	}
+}
+
+.input-search-01 {
+	vertical-align: middle;
+	// background-color: #fff;
+	background-color: transparent;
 	color: #fff;
-	font-size: 30px;
+	border: none;
+	padding: 9px 15px 8px;
+	width: calc(100% - 70px);
+	font-size: 20px;
+	border-right: 2px solid transparent;
+	transition: all 0.3s ease-in-out;
+
+	&:focus {
+		outline: none;
+		border-right-color: #fff
+	}
+
+	&::placeholder {
+		color: #fff;
+	}
 }
+
+.search-result-wrapper {
+	background-color: #fff;
+	list-style: none;
+	position: relative;
+	min-height: 200px;
+	margin-top: 5px;
+
+	.item {
+		margin-bottom: 10px;
+		padding: 0 15px;
+	}
+
+	&.show .search-result {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		width: 24px;
+		height: 24px;
+		background-image: url('../images/spinner.png');
+		@include absolute(50%, null, null, 50%);
+		transform: translate(-50%, -50%);
+		transition: all 0.3s ease-in-out;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&.isLoading {
+		&:before {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.search-result {
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease-in-out;
+	max-height: 400px;
+	overflow-y: auto;
+
+}
+// .button--01,
+// .logo {
+// 	color: #fff;
+// 	font-size: 30px;
+// }

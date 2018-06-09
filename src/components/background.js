@@ -64,7 +64,12 @@ class Background extends React.Component{
 		})
 	};
 
+	shouldComponentUpdate(){
+		return false;
+	}
+
 	render(){
+		console.log('background rendering');
 		return <canvas id="Background-Canvas" width="375" height="667" className="bg-01"></canvas>
 	}
 }
