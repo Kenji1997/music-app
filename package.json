@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ejs": "^2.6.1",
     "font-awesome": "^4.7.0",
+    "mongodb": "^3.0.10",
     "node-soundcloud": "0.0.6",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
